@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: iranSans;
+  src: url(../../public/fonts/IRANSansX-Medium.ttf);
+}
+
+@font-face {
+  font-family: iranSansNum;
+  src: url(../../public/fonts/IRANSansXFaNum-Medium.ttf);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
+  --primary: #2a63ff;
+  --primary-foreground: #ffffff;
+  --hover-foreground: #d6d6d6;
+  --secondary: #212123;
+  --secondary-foreground: #ffffff;
+  --sub-title: #9e9e9e;
+  --danger: #ff2c2c;
+  --danger-foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-hover-foreground: var(--hover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-sub-title: var(--sub-title);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: iranSansNum;
 }
