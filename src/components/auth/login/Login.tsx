@@ -10,6 +10,8 @@ import { loginValidation } from '@/utils/validations/login-validation/login-vali
 import Logo from '@/components/common/logo/Logo'
 import ErrorText from '@/components/common/error/ErrorText'
 import { BlurFade } from '@/components/ui/blur-fade'
+import { ILogin } from '@/types/auth-type/auth-type'
+import { login } from '@/utils/services/api/auth/login'
 
 const Login = () => {
 
@@ -19,8 +21,14 @@ const Login = () => {
         register
     } = useForm({ resolver: zodResolver(loginValidation) })
 
-    const onSubmit = () => {
+    const onSubmit = async (values: ILogin) => {
+        const data = {
+            email: values.email,
+            password: values.password
+        }
 
+        const response = await login(data)
+        console.log(response)
     }
 
     return (
